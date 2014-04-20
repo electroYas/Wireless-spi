@@ -1,8 +1,4 @@
-#include "bk2421.h"
-
-
-
-                                               //Set RX address
+#include "bk2421.h"                                               //Set RX address
 #define RF_SET_RX_ADDR(addr) { SPI_Write_Buf((WRITE_REG|RX_ADDR_P0), addr, 5); }
 //TX address
 #define RF_SET_TX_ADDR(addr) { SPI_Write_Buf((WRITE_REG|TX_ADDR), addr, 5); }
@@ -19,18 +15,10 @@
 //Clear TX FIFO
 #define RF_FLUSH_TX() { SPI_Write_Reg(FLUSH_TX,0); }
 
- #define DYNPD           0x1c
+#define DYNPD           0x1c
 #define FEATURE         0x1d
-    #define BANK0_REG_LIST_CNT                        21
+#define BANK0_REG_LIST_CNT                        21
 #define BANK0_REGACT_LIST_CNT                2
-
-
-
-
-
-
-
-
 
 
 UINT32 Bank1_Reg0_13[]={
@@ -81,13 +69,6 @@ UINT8 Bank0_Reg[BANK0_REG_LIST_CNT][2]={
         {FIFO_STATUS,0x11}
 };
 
-
-
-
-
-
-
-
 UINT8 Bank0_RegAct[BANK0_REGACT_LIST_CNT][2] = {
         {DYNPD,                0x01},        //Enable pipe 0, Dynamic payload length
         {FEATURE,        0x04}        //EN_DPL= 1, EN_ACK_PAY = 0, EN_DYN_ACK = 0
@@ -101,68 +82,7 @@ UINT8 RX0_Address[]={0x34,0x43,0x10,0x10,0x01};
 UINT8 RX1_Address[]={0x39,0x38,0x37,0x36,0xc2};
 
 UINT8 op_status;
-//Bank1 register initialization value
 
-//In the array Bank1_Reg0_13,all[] the register value is the byte reversed!!!!!!!!!!!!!!!!!!!!!
-/*unsigned long Bank1_Reg0_13[]={
-0xE2014B40,
-0x00004BC0,
-0x028CFCD0,
-0x41390099,
-0x0B869ED9,  //Change REG4[29:27] from 00 to 11
-0xA67F0624,  //Disable RSSI measurement
-0x00000000,
-0x00000000,
-0x00000000,
-0x00000000,
-0x00000000,
-0x00000000,
-0x00127300,
-0x36B48000,
-};
-
-UINT8 Bank1_Reg14[]=
-{
-0x41,0x20,0x08,0x04,0x81,0x20,0xCF,0xF7,0xFE,0xFF,0xFF
-};
-
-//Bank0 register initialization value
-UINT8 Bank0_Reg[][2]={
-{0,0x0F},
-{1,0x3F},
-{2,0x3F},
-{3,0x03},
-{4,0xff},
-{5,0x17},
-{6,0x15},        //1Mbps data rate, output power=0dBm
-{7,0x07},
-{8,0x00},
-{9,0x00},
-{12,0xc3},
-{13,0xc4},
-{14,0xc5},
-{15,0xc6},
-{17,0x20},
-{18,0x20},
-{19,0x20},
-{20,0x20},
-{21,0x20},
-{22,0x20},
-{23,0x00},
-{28,0x3F},
-{29,0x07}
-};*/
-
-///////////////////////////////////////////////////////////////////////////////
-//                  SPI access                                               //
-///////////////////////////////////////////////////////////////////////////////
-
-/**************************************************
-Function: SPI_RW();
-
-Description:
-        Writes one UINT8 to BK2421, and return the UINT8 read
-**************************************************/
 UINT8 SPI_RW(UINT8 value)
 {
         UINT8 bit_ctr;
@@ -352,47 +272,7 @@ Description:
 **************************************************/
 void BK2421_Initialize()
 {
-        //INT8 i,j;
-         //UINT8 WriteArr[4];
-
-        //delay_ms(100);//delay more than 50ms.
-
-       // SwitchCFG(0);
-     //   for(i=20;i>=0;i--){
-   //      SPI_Write_Reg((WRITE_REG|Bank0_Reg[i][0]),Bank0_Reg[i][1]);
- //        }
-//        SPI_Write_Buf((WRITE_REG|10),RX0_Address,5);
-//        SPI_Write_Buf((WRITE_REG|11),RX1_Address,5);
-//        SPI_Write_Buf((WRITE_REG|16),RX0_Address,5);
-//        i=SPI_Read_Reg(29);
-//        if(i==0) SPI_Write_Reg(ACTIVATE_CMD,0x73);// Active
-//        for(i=22;i>=21;i--) SPI_Write_Reg((WRITE_REG|Bank0_Reg[i][0]),Bank0_Reg[i][1]);
-//        SwitchCFG(1);
-
-//        for(i=0;i<=8;i++)//reverse
-//        {
-//                for(j=0;j<4;j++) WriteArr[j]=(Bank1_Reg0_13[i]>>(8*(j) ) )& 0xff;
-//                SPI_Write_Buf((WRITE_REG|i),&(WriteArr[0]),4);
-//        }
-//       for(i=9;i<=13;i++)
-//        {
-//                for(j=0;j<4;j++) WriteArr[j]=(Bank1_Reg0_13[i]>>(8*(3-j) ) ) & 0xff;
-//                SPI_Write_Buf((WRITE_REG|i),&(WriteArr[0]),4);
-//        }
-//       SPI_Write_Buf((WRITE_REG|14),&(Bank1_Reg14[0]),11);
-//        for(j=0;j<4;j++) WriteArr[j]=(Bank1_Reg0_13[4]>>(8*(j) ) )& 0xff;
-//        WriteArr[0] = WriteArr[0] | 0x06;
-//        SPI_Write_Buf((WRITE_REG|4),&(WriteArr[0]),4);
-//        WriteArr[0] = WriteArr[0] & 0xf9;
-//        SPI_Write_Buf((WRITE_REG|4),&(WriteArr[0]),4);
-//        Delay_ms(10);
-//        SwitchCFG(0);
-//        SwitchToRxMode();//switch to RX mode
-
-
-
-
-signed char i,j;
+  signed char i,j;
     UINT8 rData;
     UINT8 WriteArr[4];
     //UINT8 addr,value;
