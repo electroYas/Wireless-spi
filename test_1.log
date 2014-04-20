@@ -1,0 +1,20 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP18F4580 -DL -O11111114 -fo4 -N"C:\sugarsync\wireless_spi\test_1.mcppi" -SP"D:\Program Files\Mikroelektronika\mikroC PRO for PIC\defs\" -SP"D:\Program Files\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"C:\sugarsync\wireless_spi\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"D:\sugarsync\wireless_spi\" "test_1.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_CType.mcl" "__Lib_CString.mcl" "__Lib_CStdlib.mcl" "__Lib_CMath.mcl" "__Lib_Conversions.mcl" "__Lib_Sprinti.mcl" "__Lib_Sprintl.mcl" "__Lib_Time.mcl" "__Lib_Trigonometry.mcl" "__Lib_Button.mcl" "__Lib_Keypad4x4.mcl" "__Lib_Manchester.mcl" "__Lib_OneWire.mcl" "__Lib_PS2.mcl" "__Lib_Sound.mcl" "__Lib_SoftI2C.mcl" "__Lib_SoftSPI.mcl" "__Lib_SoftUART.mcl" "__Lib_ADC_A_D.mcl" "__Lib_EEPROM_256.mcl" "__Lib_FLASH_w32_e64.mcl" "__Lib_I2C_c34.mcl" "__Lib_PWM_c2d4.mcl" "__Lib_SPI_c345.mcl" "__Lib_UART_c67.mcl" "__Lib_PortExpander.mcl" "__Lib_CANSPI.mcl" "__Lib_CF.mcl" "__Lib_GlcdFonts.mcl" "__Lib_Glcd.mcl" "__Lib_LcdConsts.mcl" "__Lib_Lcd.mcl" "__Lib_RS485.mcl" "__Lib_S1D13700.mcl" "__Lib_T6963C.mcl" "__Lib_SPIGlcd.mcl" "__Lib_SPILcd.mcl" "__Lib_SPILcd8.mcl" "__Lib_SPIT6963C.mcl" "__Lib_EthEnc28j60.mcl" "__Lib_TFT.mcl" "__Lib_TouchPanel_TFT.mcl" "__Lib_EthEnc24j600.mcl" "__Lib_TouchPanel.mcl"	 
+warning: 0	1501	Specified search path does not exist: 'C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs'	 
+warning: 0	1501	Specified search path does not exist: 'C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18'	 
+warning: 0	1501	Specified search path does not exist: 'D:\sugarsync\wireless_spi'	 
+hint: 0	1139	Available RAM: 1515 [bytes], Available ROM: 32768 [bytes]	 
+diagnostics: 0	126	All files Preprocessed in 15 ms	 
+diagnostics: 0	122	Compilation Started	bk2421.h
+diagnostics: 167	123	Compiled Successfully	test_1.c
+hint: 212	1164	Variable 'value' has been eliminated by optimizer	test_1.c
+hint: 230	1164	Variable 'status' has been eliminated by optimizer	test_1.c
+hint: 270	1164	Variable 'value' has been eliminated by optimizer	test_1.c
+hint: 294	1164	Variable 'value' has been eliminated by optimizer	test_1.c
+hint: 396	1164	Variable 'rData' has been eliminated by optimizer	test_1.c
+diagnostics: 0	127	All files Compiled in 125 ms	 
+hint: 0	1144	Used RAM (bytes): 148 (10%)  Free RAM (bytes): 1367 (90%)	Used RAM (bytes): 148 (10%)  Free RAM (bytes): 1367 (90%)
+hint: 0	1144	Used ROM (bytes): 1723 (5%)  Free ROM (bytes): 31045 (95%)	Used ROM (bytes): 1723 (5%)  Free ROM (bytes): 31045 (95%)
+diagnostics: 0	125	Project Linked Successfully	test_1.mcppi
+diagnostics: 0	128	Linked in 2235 ms	 
+diagnostics: 0	129	Project 'test_1.mcppi' completed: 2532 ms	 
+diagnostics: 0	103	Finished successfully: 31 Jul 2011, 18:34:26	test_1.mcppi
